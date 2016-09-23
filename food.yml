@@ -1,0 +1,25 @@
+wares:
+  # all quantities are per 100 grams
+  - &gilde_kjottpolse
+    kcal: 224
+    # grams of protein
+    p: 10
+  - &oats
+    kcal: 370
+    p: 11
+  - &milk
+    kcal: 38
+    p: 3.4
+dishes:
+  - &breakfast
+    ingredients:
+      - <<: *oats
+        qty: 2
+      - <<: *milk
+        qty: 4
+
+days:
+  2016-09-23:
+    - *breakfast
+      # - <<: *gilde_kjottpolse
+      #qty: 4.5
