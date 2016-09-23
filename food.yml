@@ -1,5 +1,5 @@
 wares:
-  # all quantities are per 100 grams
+  # all quantities are per 100 grams unless otherwise specified
   - &gilde_kjottpolse
     kcal: 224
     # grams of protein
@@ -17,9 +17,14 @@ dishes:
         qty: 2
       - <<: *milk
         qty: 4
-
 days:
   2016-09-23:
+    # 0 = sedentary
+    # 1 = light, 1-3 days/week
+    # 2 = moderate, 3-5 days/week
+    # 3 = heavy, 6-7 days/week
+    # 4 = athlete level
+    - activity: 0
     - *breakfast
-      # - <<: *gilde_kjottpolse
-      #qty: 4.5
+    - <<: *gilde_kjottpolse
+      qty: 4.5
