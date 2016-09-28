@@ -1,5 +1,5 @@
 wares:
-  # all quantities are per 100 grams unless otherwise specified
+  # all quantities are per hectogram unless otherwise specified
   - &gilde_kjottpolse
     kcal: 224
     # grams of protein
@@ -10,6 +10,22 @@ wares:
   - &milk
     kcal: 38
     p: 3.4
+  - &pizza_hjemmelaget
+    kcal: 227
+    p: 11
+  - &pasta
+    kcal: 365
+    p: 11.5
+  - &cheese
+    kcal: 351
+    p: 27
+  - &margarine
+    kcal: 388
+    p: 4
+  # home made, estimated
+  - &bread
+    kcal: 230
+    p: 10
 dishes:
   - &breakfast
     ingredients:
@@ -17,6 +33,25 @@ dishes:
         qty: 2
       - <<: *milk
         qty: 4
+  - &bread_and_cheese_hg
+    ingredients:
+      - <<: *bread
+        qty: 0.812
+      - <<: *margarine
+        qty: 0.044
+      - <<: *cheese
+        qty: 0.144
+  - &macsaussagencheese_hg
+    ingredients:
+      ingredients:
+        - <<: *gilde_kjottpolse
+          qty: 4.5
+        - <<: *pasta
+          qty: 5.65
+        - <<: *cheese
+          qty: 0.85
+      # cooked weight: 25.3 hg, meaning an inverse of 0.03953
+      qty: 0.03953
 days:
   2016-09-23:
     # 0 = sedentary
@@ -28,3 +63,27 @@ days:
     - *breakfast
     - <<: *gilde_kjottpolse
       qty: 4.5
+  2016-09-24:
+    - activity: 1
+    - *breakfast
+    - <<: *gilde_kjottpolse
+      qty: 1.12
+    - <<: *bread
+      qty: 6.70
+  2016-09-25:
+    - <<: *gilde_kjottpolse
+      qty: 1.12
+    - <<: *bread
+      qty: 5.28
+  2016-09-26:
+    - <<: *bread_and_cheese_hg
+      qty: 4.59
+    - <<: *pizza_hjemmelaget
+      qty: 5
+  2016-09-27:
+    - <<: *bread_and_cheese_hg
+      qty: 3
+    - <<: *macsaussagencheese_hg
+      qty: 9.5
+  2016-09-28:
+    - <<: *breakfast

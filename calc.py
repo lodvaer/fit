@@ -16,7 +16,10 @@ def food_sum(food, kcal = 0, p = 0):
             kcal, p = food_sum(x, kcal, p)
     if type(food) == dict:
         if 'ingredients' in food:
-            kcal, p = food_sum(food['ingredients'], kcal, p)
+            kcal2, p2 = food_sum(food['ingredients'])
+            qty = food['qty'] if 'qty' in food else 1
+            kcal += kcal2*qty
+            p += p2*qty
         else:
             qty = food['qty'] if 'qty' in food else 1
             kcal += food['kcal']*qty if 'kcal' in food else 0
@@ -47,10 +50,11 @@ def main():
     kg = 0
     for day, food in sorted(YML['days'].items()):
         kcal, p = food_sum(food)
-        diff = kcal - burn(food)
+        brn = burn(food)
+        diff = kcal - brn
         kg += diff/7700
-        fmt = "{:%Y-%m-%d}\tkcal:{}\tp:{}\tdiff:{}\tkg:{:.1}"
-        print(fmt.format(day, kcal, p, diff, kg))
+        fmt = "{:%Y-%m-%d}\tkcal:{:.1f}\tp:{:.1f}\tb:{:.1f}\tdiff:{:.1f}\tkg:{:.2f}"
+        print(fmt.format(day, kcal, p, brn, diff, kg))
 
 if __name__ == '__main__':
     main()
