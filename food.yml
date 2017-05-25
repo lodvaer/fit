@@ -4,6 +4,20 @@ wares:
     kcal: 224
     # grams of protein
     p: 10
+  - &folkets_80pct_grillpolse
+    kcal: 230
+    p: 13.6
+  - &folkets_80pct_grillpolse_stk
+    ingredients:
+      - <<: *folkets_80pct_grillpolse
+        qty: 0.57
+  - &fp_polsebrod
+    kcal: 301
+    p: 8.7
+  - &fp_polsebrod_stk
+    ingredients:
+      - <<: *fp_polsebrod
+        qty: 0.32
   - &oats
     kcal: 370
     p: 11
@@ -22,68 +36,135 @@ wares:
   - &margarine
     kcal: 388
     p: 4
-  # home made, estimated
-  - &bread
+  - &bread # home made, estimated
     kcal: 230
     p: 10
+  - &lasagna_plates
+    kcal: 359
+    p: 12.5
+  - &olive_oil
+    kcal: 884
+    p: 0
+  - &olive_oil_tbsp
+    ingredients:
+      - <<: *olive_oil
+        qty: 0.14
+  - &ground_beef
+    kcal: 236
+    p: 26
+  - &onions
+    kcal: 40
+    p: 1
+  - &chopped_tomatoes
+    kcal: 21
+    p: 1.1
+  - &tomato_puree
+    kcal: 108
+    p: 3.5
+  - &butter
+    kcal: 717
+    p: 0.85
+  - &flour
+    kcal: 359
+    p: 11
+  - &banana_stk
+    kcal: 105
+    p: 1
+  - &brokkoliblanding
+    kcal: 25
+    p: 1.9
+  - &pollock
+    kcal: 71
+    p: 17
+  - &egg_stk
+    kcal: 55
+    p: 4
+  - &fp_kneip
+    kcal: 251
+    p: 9
+  - &brelett
+    kcal: 388
+    p: 4
+  - &chicken_breasts
+    kcal: 105
+    p: 24
 dishes:
-  - &breakfast
+  - &lasagna
     ingredients:
-      - <<: *oats
-        qty: 2
-      - <<: *milk
-        qty: 4
-  - &bread_and_cheese_hg
-    ingredients:
-      - <<: *bread
-        qty: 0.812
-      - <<: *margarine
-        qty: 0.044
+      - <<: *lasagna_plates
+        qty: 2.24
       - <<: *cheese
-        qty: 0.144
-  - &macsaussagencheese_hg
+        qty: 1.14
+      - <<: *cheese
+        qty: 1.85
+      - <<: *olive_oil_tbsp
+        qty: 2
+      - <<: *ground_beef
+        qty: 4
+      - <<: *onions
+        qty: 2.4
+      - <<: *chopped_tomatoes
+        qty: 3.9
+      - <<: *tomato_puree
+        qty: 0.78
+      - <<: *butter
+        qty: 0.4
+      - <<: *flour
+        qty: 0.35
+      - <<: *milk
+        qty: 6.2
+  - &sceggs
     ingredients:
-      ingredients:
-        - <<: *gilde_kjottpolse
-          qty: 4.5
-        - <<: *pasta
-          qty: 5.65
-        - <<: *cheese
-          qty: 0.85
-      # cooked weight: 25.3 hg, meaning an inverse of 0.03953
-      qty: 0.03953
+      - <<: *pollock
+        qty: 6.25
+      - <<: *brokkoliblanding
+        qty: 5
+      - <<: *egg_stk
+        qty: 5
 days:
-  2016-09-23:
+  2017-05-21:
     # 0 = sedentary
     # 1 = light, 1-3 days/week
     # 2 = moderate, 3-5 days/week
     # 3 = heavy, 6-7 days/week
     # 4 = athlete level
     - activity: 0
-    - *breakfast
-    - <<: *gilde_kjottpolse
-      qty: 4.5
-  2016-09-24:
-    - activity: 1
-    - *breakfast
-    - <<: *gilde_kjottpolse
-      qty: 1.12
-    - <<: *bread
-      qty: 6.70
-  2016-09-25:
-    - <<: *gilde_kjottpolse
-      qty: 1.12
-    - <<: *bread
-      qty: 5.28
-  2016-09-26:
-    - <<: *bread_and_cheese_hg
-      qty: 4.59
-    - <<: *pizza_hjemmelaget
+    - <<: *lasagna
+      qty: 0.4
+    - <<: *banana_stk
+      qty: 2
+  2017-05-22:
+    - <<: *banana_stk
+      qty: 2
+    - kcal: 800
+      p: 40
+    - <<: *sceggs
+      qty: 0.5
+    - <<: *fp_kneip
+      qty: 1.01
+    - <<: *brelett
+      qty: 0.18
+    - <<: *cheese
+      qty: 0.5
+  2017-05-23:
+    - <<: *banana_stk
+      qty: 2
+    - kcal: 1000
+      p: 60
+    - <<: *sceggs
+      qty: 0.5
+  2017-05-24:
+    - *banana_stk
+    - kcal: 800
+      p: 40
+    - ingredients:
+        - *folkets_80pct_grillpolse_stk
+        - *fp_polsebrod_stk
       qty: 5
-  2016-09-27:
-    - <<: *bread_and_cheese_hg
-      qty: 3
-    - <<: *macsaussagencheese_hg
-      qty: 9.5
-  2016-09-28:
-    - <<: *breakfast
+    - <<: *folkets_80pct_grillpolse_stk
+      qty: 2
+  2017-05-25:
+    - <<: *banana_stk
+      qty: 2
+    - <<: *chicken_breasts
+      qty: 8
