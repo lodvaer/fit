@@ -88,6 +88,9 @@ wares:
   - &chicken_breasts
     kcal: 105
     p: 24
+  - &plenny_shake_sport
+    kcal: 392
+    p: 26
 dishes:
   - &lasagna
     ingredients:
@@ -121,6 +124,10 @@ dishes:
         qty: 5
       - <<: *egg_stk
         qty: 5
+  - &pss
+    ingredients:
+      - <<: *plenny_shake_sport
+        qty: 2.22
 days:
   2017-05-21:
     # 0 = sedentary
@@ -168,3 +175,18 @@ days:
       qty: 2
     - <<: *chicken_breasts
       qty: 8
+  2017-05-26:
+    - activity: 2
+    - <<: *banana_stk
+      qty: 2
+    - kcal: 800
+      p: 40
+    - <<: *pss
+      qty: 2
+  2017-05-27:
+    - activity: 2
+    - *pss
+    - *pss
+    - <<: *chicken_breasts
+      qty: 4
+    - *pss
