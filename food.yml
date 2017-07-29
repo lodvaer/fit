@@ -7,6 +7,9 @@ wares:
   - &folkets_80pct_grillpolse
     kcal: 230
     p: 13.6
+  - &knekkebrod_stk
+    kcal: 45
+    p: 1
   - &folkets_80pct_grillpolse_stk
     ingredients:
       - <<: *folkets_80pct_grillpolse
@@ -73,6 +76,9 @@ wares:
   - &brokkoliblanding
     kcal: 25
     p: 1.9
+  - &amerikansk_blanding
+    kcal: 55
+    p: 2.7
   - &pollock
     kcal: 71
     p: 17
@@ -91,6 +97,44 @@ wares:
   - &plenny_shake_sport
     kcal: 392
     p: 26
+  - &grandis
+    kcal: 230
+    p: 12
+  - &grandis_stk
+    ingredients:
+      - <<: *grandis
+        qty: 5.75
+  - &sommerkoteletter
+    kcal: 213
+    p: 17
+  - &spaghetti
+    kcal: 365
+    p: 11.5
+  - &pesto
+    kcal: 417
+    p: 5.4
+  - &pesto_stk
+    ingredients:
+      - <<: *pesto
+        qty: 1.85
+  - &beer_dl
+    kcal: 34
+    p: 0.28
+  - &sugar_dl
+    kcal: 322
+    p: 0
+  - &fish_balls
+    kcal: 64
+    p: 7.7
+  - &spekeskinke
+    kcal: 264
+    p: 24
+  - &nectarine_stk
+    kcal: 62
+    p: 2
+  - &carrot
+    kcal: 38
+    p: 0.785
 dishes:
   - &lasagna
     ingredients:
@@ -124,10 +168,35 @@ dishes:
         qty: 5
       - <<: *egg_stk
         qty: 5
+  - &sceggs_var_2
+    ingredients:
+      - <<: *pollock
+        qty: 6.25
+      - <<: *amerikansk_blanding
+        qty: 8
+      - <<: *egg_stk
+        qty: 6
   - &pss
     ingredients:
       - <<: *plenny_shake_sport
         qty: 2.22
+  - &ps
+    kcal: 704
+    p: 45
+  - &kanelsnurrer
+    ingredients:
+      - <<: *flour
+        qty: 5
+      - <<: *sugar_dl
+        qty: 2.5
+      - *egg_stk
+      - <<: *milk
+        qty: 2
+      - <<: *butter
+        qty: 1.5
+  - &kalkunpoelse
+    kcal: 168
+    p: 10
 days:
   2017-05-21:
     # 0 = sedentary
@@ -184,9 +253,259 @@ days:
     - <<: *pss
       qty: 2
   2017-05-27:
-    - activity: 2
     - *pss
     - *pss
     - <<: *chicken_breasts
       qty: 4
     - *pss
+  2017-05-28:
+    - *pss
+    - <<: *folkets_80pct_grillpolse_stk
+      qty: 10
+    - *pss
+  2017-05-29:
+    - kcal: 600
+      p: 20
+    - <<: *pss
+      qty: 2
+  2017-05-30:
+    - activity: 3
+    - kcal: 400
+      p: 20
+    - <<: *pss
+      qty: 3
+  2017-05-31:
+    - activity: 2
+    - <<: *pss
+      qty: 2
+    - kcal: 800
+      p: 60
+    - <<: *grandis_stk
+      qty: 0.167
+  2017-06-01:
+    - <<: *pss
+      qty: 2
+    - kcal: 500
+      p: 40
+    - <<: *grandis_stk
+      qty: 0.25
+  2017-06-02:
+    - activity: 1
+    - *pss
+    - kcal: 600
+      p: 50
+    - <<: *grandis_stk
+      qty: 0.90
+  2017-06-03:
+    - activity: 2
+    - *pss
+    - *pss
+    - <<: *sommerkoteletter
+      qty: 5
+  2017-06-04:
+    - *pss
+    - *pss
+    - <<: *sommerkoteletter
+      qty: 5
+  2017-06-05:
+    - *pss
+    - *pss
+    - *pesto_stk
+    - <<: *spaghetti
+      qty: 2
+  2017-06-06:
+    - activity: 1
+    - *pss
+    - kcal: 700
+      p: 60
+    - *pss
+  2017-06-07:
+    - *pss
+    - kcal: 900
+      p: 60
+    - *pss
+  2017-06-08:
+    - *pss
+    - kcal: 1500
+      p: 80
+    - <<: *beer_dl
+      qty: 20
+  2017-06-09:
+    - *pss
+    - kcal: 900
+      p: 60
+  2017-06-10:
+    - *pss
+    - <<: *sceggs_var_2
+      qty: 0.5
+  2017-06-11:
+    - *pss
+    - <<: *sceggs_var_2
+      qty: 0.5
+    - kcal: 700
+      p: 20
+  2017-06-12:
+    - activity: 3
+    - *pss
+    - kcal: 700
+      p: 60
+    - *pss
+    - *pss
+  2017-06-13:
+    - activity: 2
+    - *pss
+    - kcal: 900
+      p: 25
+    - *pss
+    - kcal: 800
+      p: 10
+  2017-06-14:
+    - activity: 1
+    - kcal: 900
+      p: 25
+    - *pss
+    - *pss
+  2017-06-15:
+    - kcal: 1100
+      p: 60
+    - *pss
+  2017-06-16:
+    - activity: 3
+    - *pss
+    - kcal: 700
+      p: 40
+    - *pss
+    - <<: *sceggs_var_2
+      qty: 0.5
+  2017-06-17:
+    - <<: *sceggs_var_2
+      qty: 0.5
+    - *pss
+    - kcal: 1000
+      p: 10
+  2017-06-18:
+    - *pss
+    - *pss
+    - <<: *kanelsnurrer
+      qty: 0.2727
+  2017-06-19:
+    - *pss
+    - kcal: 1000
+      p: 40
+    - <<: *kanelsnurrer
+      qty: 0.1818
+    - <<: *sommerkoteletter
+      qty: 5
+  2017-06-20:
+    - *pss
+    - kcal: 700
+      p: 20
+    - *pss
+    - <<: *sommerkoteletter
+      qty: 5
+# Nothing too horrible here. I think.
+  2017-07-08:
+    - activity: 0
+    - *pss
+    - *pss
+  2017-07-09:
+    - *pss
+    - *pss
+  2017-07-10:
+    - *pss
+    - *pss
+  2017-07-11:
+    - *pesto_stk
+    - <<: *spaghetti
+      qty: 2
+    - *pss
+  2017-07-12:
+    - *pesto_stk
+    - <<: *spaghetti
+      qty: 2
+    - *pss
+    - *pss
+  2017-07-13:
+    - *pss
+    - <<: *pollock
+      qty: 6.25
+    - <<: *brokkoliblanding
+      qty: 2.5
+  2017-07-14:
+    - *pss
+    - *pss
+  2017-07-15:
+    - *pss
+    - *pss
+  2017-07-16:
+    - *pss
+    - *pss
+  2017-07-17:
+    - *pss
+    - *pss
+  2017-07-18:
+    - kcal: 0
+      p: 0
+  2017-07-19:
+    - *pss
+    - *pss
+    - <<: *fish_balls
+      qty: 5.5
+    - <<: *pollock
+      qty: 6.25
+    - <<: *brokkoliblanding
+      qty: 2.5
+  2017-07-20:
+    - *pss
+    - *pss
+    - <<: *pollock
+      qty: 4
+    - <<: *brokkoliblanding
+      qty: 2.5
+  2017-07-21:
+    - *pss
+    - <<: *pollock
+      qty: 4
+    - <<: *brokkoliblanding
+      qty: 2.5
+  2017-07-22:
+    - *pss
+    - <<: *pollock
+      qty: 4
+    - <<: *brokkoliblanding
+      qty: 2.5
+  2017-07-23:
+    - *pss
+    - *pss
+  2017-07-24:
+    - *pss
+    - <<: *pizza_hjemmelaget
+      qty: 10
+    - <<: *kalkunpoelse
+      qty: 6
+  2017-07-25:
+    - activity: 2
+    - *pss
+    - <<: *spekeskinke
+      qty: 1.95
+    - <<: *nectarine_stk
+      qty: 8
+  2017-07-26:
+    - *pss
+    - <<: *sommerkoteletter
+      qty: 10
+  2017-07-27:
+    - activity: 0
+    - *pss
+    - <<: *knekkebrod_stk
+      qty: 5
+    - <<: *spekeskinke
+      qty: 3
+  2017-07-28:
+    - <<: *ps
+      qty: 2
+    - <<: *carrot
+      qty: 2.86
+  2017-07-28:
+    - <<: *ps
+      qty: 2

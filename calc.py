@@ -27,11 +27,13 @@ def food_sum(food, kcal = 0, p = 0):
     return kcal, p
 
 # Calculate burn using BMR and Harris-Benedict exercise multipliers.
+_activity = 0
 def burn(food):
     def mul():
-        if 'activity' not in food[0]:
-            return 1.2
-        act = food[0]['activity']
+        global _activity
+        if 'activity' in food[0]:
+            _activity = food[0]['activity']
+        act = _activity
         if act == 0:
             return 1.2
         if act == 1:
